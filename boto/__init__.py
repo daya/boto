@@ -156,7 +156,7 @@ def connect_gs(gs_access_key_id=None, gs_secret_access_key=None, **kwargs):
     return GSConnection(gs_access_key_id, gs_secret_access_key, **kwargs)
 
 
-def connect_ec2(aws_access_key_id=None, aws_secret_access_key=None, **kwargs):
+def connect_ec2(aws_access_key_id=None, aws_secret_access_key=None, aws_session_token=None, **kwargs):
     """
     :type aws_access_key_id: string
     :param aws_access_key_id: Your AWS Access Key ID
@@ -168,7 +168,7 @@ def connect_ec2(aws_access_key_id=None, aws_secret_access_key=None, **kwargs):
     :return: A connection to Amazon's EC2
     """
     from boto.ec2.connection import EC2Connection
-    return EC2Connection(aws_access_key_id, aws_secret_access_key, **kwargs)
+    return EC2Connection(aws_access_key_id, aws_secret_access_key, aws_session_token, **kwargs)
 
 
 def connect_elb(aws_access_key_id=None, aws_secret_access_key=None, **kwargs):
